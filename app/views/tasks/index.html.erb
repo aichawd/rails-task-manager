@@ -5,6 +5,13 @@
     <li>
       <input type="checkbox" id="scales" name="scales" checked="<% task.completed %>">
       <%= link_to task.title, task_path(task) %>
+      <%= link_to "Edit", edit_task_path(task) %>
+      <%= link_to "🗑️",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
     </li>
   </ul>
 <% end %>
+
+<%= link_to "Add a new task", tasks_new_path %>
